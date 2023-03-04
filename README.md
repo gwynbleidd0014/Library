@@ -19,7 +19,7 @@ This is a simple 2 page website with 3 views, mobile, tablets and desktop, only 
 
 ### Links
 
-[Click to view live site]()
+[Click to view live site](https://gwynbleidd0014.github.io/Library/)
 
 ## Author
 
