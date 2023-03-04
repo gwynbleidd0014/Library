@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="main-title">Library</h1>
+        <button class="btn add">Add Book</button>
+      </div>
+    </header>
+    <div class="books-container" id="book-container"></div>
+    <div class="form-wrapper hidden">
+      <form action="" method="get">
+        <div class="form-item">
+          <label for="author">Author*</label>
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="Author name"
+            minlength="3"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label for="title">Title*</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Book title"
+            minlength="3"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label for="pages">Pages*</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            id="pages"
+            name="pages"
+            placeholder="Number of pages"
+            pattern="[0-9]+"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label for="pages">Link of Cover*</label>
+          <input
+            type="url"
+            id="url"
+            name="url"
+            placeholder="Number of pages"
+            minlength="10"
+            maxlength="100"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <label>Have you read the book</label>
+          <div class="form-item">
+            <input type="checkbox" id="switch" />
+            <label for="switch"></label>
+          </div>
+        </div>
+        <button class="btn submit" type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

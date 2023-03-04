@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-cl: #2b2d42;
+  --gray-cl: #8d99ae;
+  --white-cl: #edf2f4;
+  --red-cl: #ef233c;
+  --redst-cl: #d90429;
+  --green-cl: #bada55;
+
+  --bold: 700;
+  --normal: 400;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: var(--normal);
+}
+
+img {
+  width: 100%;
+}
+
+/* STYLING INPUT AND BUTTONS*/
+
+input,
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+input {
+  border-radius: 5px;
+  padding: 1em 1.2em;
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+input:focus {
+  outline: 2px solid var(--red-cl);
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  color: var(--white-cl);
+  background: var(--redst-cl);
+}
+
+input:focus:valid {
+  outline: 2px solid var(--green-cl);
+}
+
+/* HEADER STYLES */
+
+header {
+  background-color: var(--dark-cl);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4em;
+}
+
+header > .container {
+  margin: 0 auto;
+  padding: 2em 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white-cl);
+}
+
+/* BOOKS CONTAINER */
+.books-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2em;
+  margin-bottom: 5em;
+}
+
+/* STYLING BOOK */
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 30px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.1rem;
+  background: linear-gradient(180deg, #b8c6db, #f5f7fa);
+}
+
+.book:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.book .section-title {
+  font-weight: var(--bold);
+  font-size: 1.2rem;
+}
+
+.remove-book {
+  width: 40px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  transition: all 0.3s ease-in;
+  background: white;
+  border-radius: 50%;
+  padding: 0.2em;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.remove-book:hover {
+  transform: scale(1.1) rotate(180deg);
+  cursor: pointer;
+}
+
+.read-gradient {
+  background: linear-gradient(180deg, #89d4cf, #6e45e1);
+  color: var(--white-cl);
+}
+
+.change-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.book-cover {
+  aspect-ratio: 3/4;
+  object-fit: contain;
+}
+
+/* STYLING BUTTONS */
+
+.btn {
+  border: none;
+  background-color: var(--redst-cl);
+  color: var(--white-cl);
+  padding: 0.8em 1.5em;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.2s all ease-in;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* STYLING FORM */
+.form-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: grid;
+  place-items: center;
+}
+
+form {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+form label {
+  font-size: 1.2rem;
+}
+
+.submit {
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* COSTUM TOOGLE BUTTON */
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+input + label {
+  cursor: pointer;
+  text-indent: -99999px;
+  width: 50px;
+  height: 24px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+input + label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #bada55;
+}
+
+input:checked + label::after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+input + label:active:after {
+  width: 25px;
+}
