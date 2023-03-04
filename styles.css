@@ -26,6 +26,10 @@ img {
   width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* STYLING INPUT AND BUTTONS*/
 
 input,
@@ -171,9 +175,10 @@ header > .container {
 
 /* STYLING FORM */
 .form-wrapper {
-  height: 100vh;
+  z-index: 300;
+  position: fixed;
+  height: 100%;
   width: 100vw;
-  position: absolute;
   top: 0;
   background-color: rgba(0, 0, 0, 0.2);
   display: grid;
