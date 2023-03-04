@@ -11,7 +11,7 @@ This is a solution to Odin Projects Library challange.
 
 ## Overview
 
-This is a simple 2 page website with 3 views, mobile, tablets and desktop, only html and css was used in process
+This is a simple Book library website, you can add and remove your books. Practicing work with Javascript Objects.
 
 ### Screenshot
 
