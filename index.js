@@ -12,6 +12,17 @@ const url = document.querySelector("#url");
 //Library
 let myLirary = [];
 
+//Neccesary classes
+class Book {
+  constructor(author, title, pages, url, read) {
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+    this.url = url;
+    this.read = read;
+  }
+}
+
 //Push books manualy to library
 myLirary.push(
   new Book(
@@ -78,15 +89,6 @@ submit.addEventListener("click", (e) => {
   if (!validateForm(author.value, title.value, pages.value, url.value)) return;
   addBookToLibrary(myLirary);
 });
-
-//Neccesary functions
-function Book(author, title, pages, url, read) {
-  this.author = author;
-  this.title = title;
-  this.pages = pages;
-  this.url = url;
-  this.read = read;
-}
 
 function addBookToLibrary(library) {
   myLirary.push(
